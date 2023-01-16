@@ -1,0 +1,16 @@
+# fly.toml file generated for pub-mariadb on 2023-01-09T12:16:38+08:00
+
+app = "pub-mariadb"
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[mounts]
+  destination = "/var/lib/mysql"
+  source = "pubdata"
+
+[env]
+  MARIADB_DATABASE = "pub"
+  MARIADB_USER = "pub"
+
+[build]
+  image = "mariadb:10.10.2"
